@@ -1,96 +1,69 @@
 // where you write functions
 
+// check if empty
 // need to check to see whose turn it is
-
+// check to see if game ends a. win b. lose c. tie [array]
+// tell ui to update screen
+// change current player
 // need to add the appropriate letter
 
 // current player
-// let currentPlayer = 'o'
-//
-// // empty game board
-// const ticBoard = ['', '', '', '', '', '', '', '', '']
-//
-// // whose turn
-// const turn = () => {
-//   if (currentPlayer === 'o') {
-//     currentPlayer = 'x'
-//   } else {
-//     currentPlayer = 'o'
-//   }
-//   return currentPlayer
-// }
+let currentPlayer = 'x'
+
+//  empty game board
+const ticBoard = ['', '', '', '', '', '', '', '', '']
+
+// whose turn
+const turn = () => {
+  if (currentPlayer === 'x') {
+    currentPlayer = 'o'
+  } else {
+    currentPlayer = 'x'
+  }
+  return currentPlayer
+}
+
+// winner logic
+const winner = function (ticBoard) {
+  if (
+    ((ticBoard[0] === ticBoard[1]) && (ticBoard[1] === ticBoard[2])) ||
+    ((ticBoard[3] === ticBoard[4]) && (ticBoard[4] === ticBoard[5])) ||
+    ((ticBoard[6] === ticBoard[7]) && (ticBoard[7] === ticBoard[8])) ||
+    ((ticBoard[0] === ticBoard[4]) && (ticBoard[4] === ticBoard[8])) ||
+    ((ticBoard[2] === ticBoard[4]) && (ticBoard[4] === ticBoard[6])) ||
+    ((ticBoard[0] === ticBoard[3]) && (ticBoard[3] === ticBoard[6])) ||
+    ((ticBoard[1] === ticBoard[4]) && (ticBoard[4] === ticBoard[7])) ||
+    ((ticBoard[2] === ticBoard[5]) && (ticBoard[5] === ticBoard[8]))) {
+    alert(`${currentPlayer}  you won!`)
+  }
+}
 
 const onClickbox = function () {
   const currentSquare = $(event.target).data('id')
+  const content = $(event.target).text()
+  // if data id empty allow player to add text
+  $(event.target).text(currentPlayer)
   console.log('click', currentSquare)
+  ticBoard[currentSquare] = currentPlayer
+  if (content === '' && currentPlayer === 'x') {
+    $(event.target).text(currentPlayer)
+    winner(ticBoard)
+    turn()
+  } else if (content === '' && currentPlayer === 'o') {
+    $(event.target).text(currentPlayer)
+    turn()
+  } else {
+    console.log('taken')
+  }
+
+  console.log(ticBoard)
+  console.log(currentPlayer)
 }
 const addEventHandler = function () {
   $('.square').on('click', onClickbox)
 }
 
-// const onClick1 = $('#box1').on('click', (event) => {
-//   $(event.target).text(currentPlayer)
-//   ticBoard[1] = currentPlayer
-//   turn()
-//   console.log(ticBoard)
-//   console.log(event.target)
-// })
-//
-// const onClick2 = $('#box2').on('click', (event) => {
-//   $(event.target).text(currentPlayer)
-//   ticBoard[2] = currentPlayer
-//   turn()
-//   console.log(ticBoard)
-//   console.log(event.target)
-// })
-//
-// const onClick3 = $('#box3').on('click', (event) => {
-//   $(event.target).text(currentPlayer)
-//   ticBoard[3] = currentPlayer
-//   turn()
-//   console.log(ticBoard)
-//   console.log(event.target)
-// })
-//
-// const onClick4 = $('#box4').on('click', (event) => {
-//   $(event.target).text(currentPlayer)
-//   ticBoard[4] = currentPlayer
-//   turn()
-//   console.log(ticBoard)
-//   console.log(event.target)
-// })
-//
-// const onClick5 = $('#box5').on('click', (event) => {
-//   $(event.target).text(currentPlayer)
-//   ticBoard[5] = currentPlayer
-//   turn()
-//   console.log(ticBoard)
-//   console.log(event.target)
-// })
-//
-// const onClick6 = $('#box6').on('click', (event) => {
-//   $(event.target).text(currentPlayer)
-//   ticBoard[6] = currentPlayer
-//   turn()
-//   console.log(ticBoard)
-//   console.log(event.target)
-// })
-//
-// const onClick7 = $('#box7').on('click', (event) => {
-//   $(event.target).text(currentPlayer)
-//   ticBoard[7] = currentPlayer
-//   turn()
-//   console.log(ticBoard)
-//   console.log(event.target)
-// })
-//
-// const onClick8 = $('#box8').on('click', (event) => {
-//   $(event.target).text(currentPlayer)
-//   ticBoard[8] = currentPlayer
-//   turn()
-//   console.log(ticBoard)
-//   console.log(event.target)
-// })
+
 
 module.exports = {
   addEventHandler
