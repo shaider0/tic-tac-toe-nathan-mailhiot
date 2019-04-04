@@ -17,3 +17,4 @@ $(() => {
 })
 
 // put the game id's in an array and find the length to find the total number of games played
+// need to find a way to clear the boxes
