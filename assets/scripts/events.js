@@ -1,11 +1,6 @@
 // where you write functions
 
-// check if empty
-// need to check to see whose turn it is
-// check to see if game ends a. win b. lose c. tie [array]
-// tell ui to update screen
-// change current player
-// need to add the appropriate letter
+//
 
 // current player
 let currentPlayer = 'x'
@@ -16,6 +11,13 @@ const ticBoard = ['', '', '', '', '', '', '', '', '']
 // check if game is a tie or gameOver
 let gameOver = false
 
+// turn off clicking for winner
+const gameFinished = function () {
+  if (gameOver === true) {
+    $('.square').off()
+  }
+}
+
 // turn
 const turn = () => {
   if (currentPlayer === 'x') {
@@ -23,6 +25,7 @@ const turn = () => {
   } else {
     currentPlayer = 'x'
   }
+  $('#message').text(`${currentPlayer}, it is your turn`)
   return currentPlayer
 }
 
@@ -35,13 +38,13 @@ const gameState = function () {
     (ticBoard[0] === ticBoard[4] && ticBoard[4] === ticBoard[8] && ticBoard[0] === currentPlayer) ||
     (ticBoard[2] === ticBoard[4] && ticBoard[4] === ticBoard[6] && ticBoard[2] === currentPlayer) ||
     (ticBoard[0] === ticBoard[3] && ticBoard[3] === ticBoard[6] && ticBoard[0] === currentPlayer) ||
-    (ticBoard[1] === ticBoard[4] && ticBoard[4] === ticBoard[7] && ticBoard[2] === currentPlayer) ||
+    (ticBoard[1] === ticBoard[4] && ticBoard[4] === ticBoard[7] && ticBoard[1] === currentPlayer) ||
     (ticBoard[2] === ticBoard[5] && ticBoard[5] === ticBoard[8] && ticBoard[2]) === currentPlayer) {
     gameOver = true
-    console.log('winner')
+    $('#winOrTie').text(`${currentPlayer} wins`)
   } else if (ticBoard.every(index => index !== '')) {
     gameOver = true
-    console.log('It is a tie')
+    $('#winOrTie').text('It is a tie!')
   }
 }
 
@@ -54,12 +57,16 @@ const onClickbox = function (event) {
     $(event.target).text(currentPlayer)
     ticBoard[currentSquare] = currentPlayer
     gameState(ticBoard, currentPlayer)
+    gameFinished()
     turn()
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
     ticBoard[currentSquare] = currentPlayer
     gameState(ticBoard, currentPlayer)
+    gameFinished()
     turn()
+  } else if (content !== '') {
+    $('#message').text('Space is taken')
   }
 }
 
