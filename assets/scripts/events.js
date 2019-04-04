@@ -15,6 +15,7 @@ let gameOver = false
 const gameFinished = function () {
   if (gameOver === true) {
     $('.square').off()
+    $('#message').hide(2000)
   }
 }
 
@@ -41,7 +42,7 @@ const gameState = function () {
     (ticBoard[1] === ticBoard[4] && ticBoard[4] === ticBoard[7] && ticBoard[1] === currentPlayer) ||
     (ticBoard[2] === ticBoard[5] && ticBoard[5] === ticBoard[8] && ticBoard[2]) === currentPlayer) {
     gameOver = true
-    $('#winOrTie').text(`${currentPlayer} wins`)
+    $('#winOrTie').text(`${currentPlayer} wins!`)
   } else if (ticBoard.every(index => index !== '')) {
     gameOver = true
     $('#winOrTie').text('It is a tie!')
@@ -52,7 +53,6 @@ const gameState = function () {
 const onClickbox = function (event) {
   const currentSquare = $(event.target).data('id')
   const content = $(event.target).text()
-  console.log('click', currentPlayer)
   if (content === '' && currentPlayer === 'x') {
     $(event.target).text(currentPlayer)
     ticBoard[currentSquare] = currentPlayer

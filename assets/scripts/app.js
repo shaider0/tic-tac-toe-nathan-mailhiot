@@ -1,7 +1,7 @@
 'use strict'
 
 const events = require('./events.js')
-
+const auth = require('./auth/events.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -10,4 +10,10 @@ const events = require('./events.js')
 
 $(() => {
   events.addEventHandler()
+  $('#sign-up').on('submit', auth.onSignUp)
+  $('#sign-in').on('submit', auth.onSignIn)
+  $('#change-password').on('submit', auth.onChangePassword)
+  $('#sign-out').on('submit', auth.onSignOut)
 })
+
+// put the game id's in an array and find the length to find the total number of games played
