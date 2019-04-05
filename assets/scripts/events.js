@@ -18,6 +18,8 @@ const gameFinished = function () {
   }
 }
 
+// let clickedBox =
+
 // new game button
 const onNewGame = function (event) {
   $('.square').text('')
@@ -35,6 +37,7 @@ const turn = () => {
   if (currentPlayer === 'x') {
     currentPlayer = 'o'
     // call apiGameUpdate here
+    // api.upDateGame($('.square').data('id'), 'o', gameOver)
   } else {
     // call apiGameUpdate here
     currentPlayer = 'x'
@@ -65,7 +68,6 @@ const gameState = function () {
 // onClickbox
 const onClickbox = function (event) {
   // finds the squares id number
-  // make currentSquare a global variable
   const currentSquare = $(event.target).data('id')
   // checks to see if the square is empty
   const content = $(event.target).text()
@@ -75,22 +77,21 @@ const onClickbox = function (event) {
     $(event.target).text(currentPlayer)
     // the array is updated with the current players letter at the arrays index
     ticBoard[currentSquare] = currentPlayer
-    api.upDateGame(ticBoard[currentSquare], currentPlayer, gameOver)
     // this checks to see if there is a winner
     gameState(ticBoard, currentPlayer)
     console.log(ticBoard)
     // this checks to see if the game is over
+    api.upDateGame(currentSquare, currentPlayer, gameOver)
     gameFinished()
     // this changes the player
     turn()
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
     ticBoard[currentSquare] = currentPlayer
-    // put patch data to be sent to store here
-    console.log(ticBoard[currentSquare], currentPlayer, gameOver)
-    api.upDateGame(ticBoard[currentSquare], currentPlayer, gameOver)
+    console.log(currentSquare, currentPlayer, gameOver)
     gameState(ticBoard, currentPlayer)
     console.log(ticBoard)
+    api.upDateGame(currentSquare, currentPlayer, gameOver)
     gameFinished()
     turn()
     // checks to see if the game is a tie
@@ -102,6 +103,7 @@ const onClickbox = function (event) {
 // passing my functions to my app file
 const addEventHandler = function () {
   $('.square').on('click', onClickbox)
+  $('.square').on('')
   $('.newGame').on('click', onNewGame)
 }
 
