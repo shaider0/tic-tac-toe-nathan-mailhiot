@@ -1,24 +1,31 @@
-// when first square is clicked it keeps track of that game for user
+const api = require('./api.js')
+const ui = require('./ui.js')
 
-// newGame button that resets the board and clears the array
-
-// how many games the user has played
-
-/*  to do list
-create a game for the user
-Pull data from the user clicking the squares as the game progresses
-
-const ifSignedUp = function () {
-  if (signUpSuccess) {
-    $('#signUp').hide()
-  }
+const onNewGameClick = function () {
+  api.createGame()
+    .then(ui.onSuccessCreate)
 }
 
-const ifSignedIn = function() {
-if (signInSuccess) {
-$('#signIn').hide()
+/*  const gameID = function () {
+  api.findID()
+    .then(ui.onIdSuccess)
+    .catch(ui.onIdFailure)
 }
-}
-
-if onClickbox function triggered add the array and index to the store along with id
 */
+const onBoardUpdate = function () {
+  api.upDateGame()
+    .then(ui.onBoardUpdateSuccess)
+    .catch(ui.onBoardUpdateFailure)
+}
+
+const onGetGames = function () {
+  api.getGames()
+    .then(ui.getSuccess)
+}
+
+module.exports = {
+  onNewGameClick,
+  // gameID,
+  onBoardUpdate,
+  onGetGames
+}

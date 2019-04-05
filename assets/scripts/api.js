@@ -9,30 +9,42 @@ const createGame = function (data) {
     data: {}
   })
 }
-/*
-const upDateGame = function (data) {
+
+/* const findID = function (data) {
   return $.ajax({
     url: config.apiUrl + `game/${id}`,
-    method: 'PATCH',
-    game: {
-    cell: {
-      index: 0,
-      value: "x"
-    },
-    over: false
-  }
-})
-}
-
-const findID = function (data) {
-  return $.ajax({
-    url: config.apiUrl + 'game/id'
     method: 'GET',
     headers: {authorization: 'Token, token=' + store.user.token}
   })
 }
 */
-module.exports = {
+const upDateGame = function (index, value, over) {
+  return $.ajax({
+    url: config.apiUrl + `games/${store.game.id}`,
+    method: 'PATCH',
+    headers: {Authorization: 'Token token=' + store.user.token},
+    data: {
+      game: {
+        cell: {
+          index: index,
+          value: value
+        },
+        over: over
+      }
+    }
+  })
+}
 
-  createGame
+const getGames = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {Authorization: 'Token token=' + store.user.token}
+  })
+}
+module.exports = {
+  createGame,
+  // findID,
+  upDateGame,
+  getGames
 }

@@ -1,5 +1,6 @@
 // where you write functions
-
+// const store = require('./store.js')
+const api = require('./api.js')
 // current player
 let currentPlayer = 'x'
 
@@ -33,7 +34,9 @@ const onNewGame = function (event) {
 const turn = () => {
   if (currentPlayer === 'x') {
     currentPlayer = 'o'
+    // call apiGameUpdate here
   } else {
+    // call apiGameUpdate here
     currentPlayer = 'x'
   }
   $('#message').text(`${currentPlayer}, it is your turn`)
@@ -62,6 +65,7 @@ const gameState = function () {
 // onClickbox
 const onClickbox = function (event) {
   // finds the squares id number
+  // make currentSquare a global variable
   const currentSquare = $(event.target).data('id')
   // checks to see if the square is empty
   const content = $(event.target).text()
@@ -71,6 +75,7 @@ const onClickbox = function (event) {
     $(event.target).text(currentPlayer)
     // the array is updated with the current players letter at the arrays index
     ticBoard[currentSquare] = currentPlayer
+    api.upDateGame(ticBoard[currentSquare], currentPlayer, gameOver)
     // this checks to see if there is a winner
     gameState(ticBoard, currentPlayer)
     console.log(ticBoard)
@@ -82,7 +87,8 @@ const onClickbox = function (event) {
     $(event.target).text(currentPlayer)
     ticBoard[currentSquare] = currentPlayer
     // put patch data to be sent to store here
-    // store.index = $(event.target).data('id')
+    console.log(ticBoard[currentSquare], currentPlayer, gameOver)
+    api.upDateGame(ticBoard[currentSquare], currentPlayer, gameOver)
     gameState(ticBoard, currentPlayer)
     console.log(ticBoard)
     gameFinished()
