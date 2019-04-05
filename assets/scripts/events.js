@@ -1,12 +1,10 @@
 // where you write functions
 
-//
-
 // current player
 let currentPlayer = 'x'
 
 //  empty game board
-const ticBoard = ['', '', '', '', '', '', '', '', '']
+let ticBoard = ['', '', '', '', '', '', '', '', '']
 
 // check if game is a tie or gameOver
 let gameOver = false
@@ -14,9 +12,20 @@ let gameOver = false
 // turn off clicking for winner
 const gameFinished = function () {
   if (gameOver === true) {
-    $('.square').off()
+    $('.gameboard').hide()
     $('#message').hide(2000)
   }
+}
+
+// new game button
+const onNewGame = function (event) {
+  $('.square').text('')
+  $('#message').text('')
+  $('#winOrTie').text('')
+  console.log(gameOver)
+  gameOver = false
+  ticBoard = ['', '', '', '', '', '', '', '', '']
+  $('.gameboard').show(1000)
 }
 
 // turn
@@ -51,27 +60,40 @@ const gameState = function () {
 
 // onClickbox
 const onClickbox = function (event) {
+  // finds the squares id number
   const currentSquare = $(event.target).data('id')
+  // checks to see if the square is empty
   const content = $(event.target).text()
+  // if the square is empty and the current player is x
   if (content === '' && currentPlayer === 'x') {
+    // when clicked the current players text is entered
     $(event.target).text(currentPlayer)
+    // the array is updated with the current players letter at the arrays index
     ticBoard[currentSquare] = currentPlayer
+    // this checks to see if there is a winner
     gameState(ticBoard, currentPlayer)
+    console.log(ticBoard)
+    // this checks to see if the game is over
     gameFinished()
+    // this changes the player
     turn()
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
     ticBoard[currentSquare] = currentPlayer
     gameState(ticBoard, currentPlayer)
+    console.log(ticBoard)
     gameFinished()
     turn()
+    // checks to see if the game is a tie
   } else if (content !== '') {
     $('#message').text('Space is taken')
   }
 }
 
+// passing my functions to my app file
 const addEventHandler = function () {
   $('.square').on('click', onClickbox)
+  $('.newGame').on('click', onNewGame)
 }
 
 module.exports = {
