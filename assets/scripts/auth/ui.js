@@ -2,6 +2,7 @@ const store = require('./../store.js')
 
 const signUpSuccess = function (data) {
   $('.up').text('You successfully signed up!')
+  $('#sign-up').hide(1000)
   console.log('sign up success ran with the data: ', data)
   $('form').trigger('reset')
 }
@@ -13,6 +14,7 @@ const signUpFailure = function (data) {
 
 const signInSuccess = function (data) {
   $('.login').text('You logged in successfully!')
+  $('#sign-in').hide(1000)
   console.log('sign in success ran with the data: ', data)
   store.user = data.user
   $('form').trigger('reset')
@@ -36,6 +38,7 @@ const changePasswordFailure = function (data) {
 
 const signOutSuccess = function () {
   console.log('Sign out successful')
+  $('.out').text('You signed out successfully!')
   $('form').trigger('reset')
   store.user = null
 }

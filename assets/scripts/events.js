@@ -20,12 +20,13 @@ const gameFinished = function () {
 // new game button
 const onNewGame = function (event) {
   $('.square').text('')
-  $('#message').text('')
   $('#winOrTie').text('')
   console.log(gameOver)
   gameOver = false
   ticBoard = ['', '', '', '', '', '', '', '', '']
   $('.gameboard').show(1000)
+  turn()
+  $('#message').show()
 }
 
 // turn
@@ -80,6 +81,8 @@ const onClickbox = function (event) {
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
     ticBoard[currentSquare] = currentPlayer
+    // put patch data to be sent to store here
+    // store.index = $(event.target).data('id')
     gameState(ticBoard, currentPlayer)
     console.log(ticBoard)
     gameFinished()
