@@ -1,5 +1,4 @@
-// where you write functions
-// const store = require('./store.js')
+// requiring the api file so I can run my patch in my click
 const api = require('./api.js')
 // current player
 let currentPlayer = 'o'
@@ -20,14 +19,21 @@ const gameFinished = function () {
 
 // new game button
 const onNewGame = function (event) {
+  // resets the squares to be blank
   $('.square').text('')
+  // resets the win or tie message to be blank
   $('#winOrTie').text('')
-  console.log(gameOver)
+  // sets game over status back to false
   gameOver = false
+  // clears the board array
   ticBoard = ['', '', '', '', '', '', '', '', '']
+  // removes the hidden class on the gameboard1 class
   $('.gameboard1').removeClass('gameboard1')
+  // shows the board after being clicked
   $('.gameboard').show(1000)
+  // resets whose turn it is so it starts with x
   turn()
+  // shows the message box
   $('#message').show()
 }
 
@@ -42,7 +48,7 @@ const turn = () => {
   return currentPlayer
 }
 
-// win statements
+// win statements and tie statement
 const gameState = function () {
   if (
     (ticBoard[0] === ticBoard[1] && ticBoard[1] === ticBoard[2] && ticBoard[0] === currentPlayer) ||
@@ -82,6 +88,7 @@ const onClickbox = function (event) {
     gameFinished()
     // this changes the player
     turn()
+    // same logic but for second player
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
     ticBoard[currentSquare] = currentPlayer

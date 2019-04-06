@@ -17,25 +17,10 @@ body {
   border-radius: 60%;
 }
 
-.gameboard1 {
+.gameStats, .newGame, .gameboard1, .signingOut, .passwordChange {
   display: none;
 }
 
-.signingOut {
-  display: none;
-}
-
-.passwordChange {
-  display: none;
-}
-
-.newGame {
-  display: none;
-}
-
-.gameStats {
-  display: none;
-}
 
 .square {
 border: solid lightgray 5px;
