@@ -18,8 +18,6 @@ const gameFinished = function () {
   }
 }
 
-// $('#gameBoardID').removeClass('gameboard')
-
 // new game button
 const onNewGame = function (event) {
   $('.square').text('')
@@ -27,6 +25,7 @@ const onNewGame = function (event) {
   console.log(gameOver)
   gameOver = false
   ticBoard = ['', '', '', '', '', '', '', '', '']
+  $('.gameboard1').removeClass('gameboard1')
   $('.gameboard').show(1000)
   turn()
   $('#message').show()

@@ -10,14 +10,6 @@ const createGame = function (data) {
   })
 }
 
-/* const findID = function (data) {
-  return $.ajax({
-    url: config.apiUrl + `game/${id}`,
-    method: 'GET',
-    headers: {authorization: 'Token, token=' + store.user.token}
-  })
-}
-*/
 const upDateGame = function (index, value, over) {
   return $.ajax({
     url: config.apiUrl + `games/${store.game.id}`,
@@ -44,7 +36,6 @@ const getGames = function () {
 }
 module.exports = {
   createGame,
-  // findID,
   upDateGame,
   getGames
 }

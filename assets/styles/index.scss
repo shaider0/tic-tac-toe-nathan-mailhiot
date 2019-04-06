@@ -9,7 +9,7 @@ h2{
 }
 
 body {
-  background-color: skyblue;
+  background-color: lightgray;
 }
 
 .sub {
@@ -17,7 +17,7 @@ body {
   border-radius: 60%;
 }
 
-.signingIn {
+.gameboard1 {
   display: none;
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 .square {
-border: solid white 5px;
+border: solid lightgray 5px;
 font-size: 5vw;
 background: #6AB187;
 text-align: center;
@@ -46,10 +46,6 @@ color: black;
 height: 100px;
 width: 100px;
 }
-
-/*.gameboard {
-  display: none;
-} */
 
 .mess {
   text-align: center;
@@ -81,4 +77,10 @@ font-size: 24px;
 text-align: center;
 width: 100%;
 font-size: 24px;
+}
+
+#numberOfGames {
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
 }

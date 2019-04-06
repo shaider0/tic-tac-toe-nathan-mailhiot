@@ -6,12 +6,6 @@ const onNewGameClick = function () {
     .then(ui.onSuccessCreate)
 }
 
-/*  const gameID = function () {
-  api.findID()
-    .then(ui.onIdSuccess)
-    .catch(ui.onIdFailure)
-}
-*/
 const onBoardUpdate = function () {
   api.upDateGame()
     .then(ui.onBoardUpdateSuccess)
@@ -25,7 +19,6 @@ const onGetGames = function () {
 
 module.exports = {
   onNewGameClick,
-  // gameID,
   onBoardUpdate,
   onGetGames
 }
