@@ -1,13 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 
 h1{
   text-align: center;
-  color: rgb(247, 255, 241)
+  color: rgb(255, 255, 234);
 }
 
 
 body {
   background-color: rgb(207, 241, 255);
+  font-family: 'Shadows Into Light', cursive;
 }
 
 
@@ -30,6 +32,38 @@ text-align: center;
 color: black;
 height: 150px;
 width: 150px;
+}
+
+.tic-zero {
+  background-color: rgba(255, 182, 138, .8);
+}
+
+.tic-one {
+  background-color: rgba(28, 255, 188, .8);
+}
+
+.tic-two {
+  background-color: rgba(255, 244, 178, .8)
+}
+
+.tic-three {
+  background-color: rgba(255, 203, 234, .8);
+}
+
+.tic-four {
+  background-color: rgba(178, 191, 255, .8);
+}
+
+.tic-five {
+  background-color: rgba(221, 255, 203, .8);
+}
+
+.tic-six {
+background-color: rgba(255, 241, 222, .8);
+}
+
+.tic-eight {
+background-color: rgba(232, 190, 255, .8);
 }
 
 .mess {
