@@ -81,7 +81,6 @@ const onClickbox = function (event) {
     ticBoard[currentSquare] = currentPlayer
     // this checks to see if there is a winner
     gameState(ticBoard, currentPlayer)
-    console.log(ticBoard)
     // sends the patch to the api
     api.upDateGame(currentSquare, currentPlayer, gameOver)
     // this checks to see if the game is over
@@ -92,9 +91,7 @@ const onClickbox = function (event) {
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
     ticBoard[currentSquare] = currentPlayer
-    console.log(currentSquare, currentPlayer, gameOver)
     gameState(ticBoard, currentPlayer)
-    console.log(ticBoard)
     api.upDateGame(currentSquare, currentPlayer, gameOver)
     gameFinished()
     turn()

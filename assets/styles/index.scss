@@ -4,6 +4,7 @@
 h1{
   text-align: center;
   color: rgb(255, 255, 234);
+  background-color: black;
 }
 
 
@@ -12,6 +13,9 @@ body {
   font-family: 'Shadows Into Light', cursive;
 }
 
+#signInandUp, #signOutandChange {
+  text-align: center;
+}
 
 .sub {
   color: white;
@@ -29,6 +33,8 @@ border: solid rgb(207, 241, 255) 5px;
 font-size: 5vw;
 background-color: rgba(225, 255, 255, 1);
 text-align: center;
+justify-content: center;
+text-shadow: 2px 2px rgba(0, 0, 0, .25);
 color: black;
 height: 150px;
 width: 150px;
@@ -36,26 +42,32 @@ width: 150px;
 
 .tic-zero {
   background-color: rgba(255, 182, 138, .8);
+
 }
 
 .tic-one {
   background-color: rgba(28, 255, 188, .8);
+
 }
 
 .tic-two {
-  background-color: rgba(255, 244, 178, .8)
+  background-color: rgba(255, 244, 178, .8);
+
 }
 
 .tic-three {
   background-color: rgba(255, 203, 234, .8);
+
 }
 
 .tic-four {
   background-color: rgba(178, 191, 255, .8);
+
 }
 
 .tic-five {
   background-color: rgba(221, 255, 203, .8);
+
 }
 
 .tic-six {
