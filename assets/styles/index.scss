@@ -2,18 +2,18 @@
 
 h1{
   text-align: center;
+  color: rgb(247, 255, 241)
 }
 
-h2{
-  text-align: center;
-}
 
 body {
-  background-color: lightgray;
+  background-color: rgb(207, 241, 255);
 }
 
+
 .sub {
-  background-color: red;
+  color: white;
+  background-color: black;
   border-radius: 60%;
 }
 
@@ -23,13 +23,13 @@ body {
 
 
 .square {
-border: solid lightgray 5px;
+border: solid rgb(207, 241, 255) 5px;
 font-size: 5vw;
-background: #6AB187;
+background-color: rgba(225, 255, 255, 1);
 text-align: center;
 color: black;
-height: 100px;
-width: 100px;
+height: 150px;
+width: 150px;
 }
 
 .mess {
@@ -40,32 +40,8 @@ width: 100px;
   color: purple;
 }
 
-.up{
+.up, .login, .change, .out, #numberOfGames{
 text-align: center;
 width: 100%;
 font-size: 24px;
-}
-
-.login{
-text-align: center;
-width: 100%;
-font-size: 24px;
-}
-
-.change{
-text-align: center;
-width: 100%;
-font-size: 24px;
-}
-
-.out{
-text-align: center;
-width: 100%;
-font-size: 24px;
-}
-
-#numberOfGames {
-  text-align: center;
-  width: 100%;
-  font-size: 24px;
 }
