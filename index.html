@@ -17,31 +17,31 @@
       <div class="login"></div>
       <div class="change"></div>
       <div class="out"></div>
-      <form id="sign-up">
+      <form id="sign-up" class="signingUp">
         <input type="email" name="credentials[email]" placeholder="Email">
         <input type="password" name="credentials[password]" placeholder="Password">
         <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
-        <input type="submit" value="Sign Up!">
+        <input class="sub" type="submit" value="Sign Up!">
       </form>
       <br>
-      <form id="sign-in">
+      <form id="sign-in" class="signingIn">
         <input type="email" name="credentials[email]" placeholder="Email" required>
         <input type="password" name="credentials[password]" placeholder="Password">
-        <input type="submit" value="Sign In!">
+        <input class="sub" type="submit" value="Sign In!">
       </form>
       <br>
-      <form id="change-password">
+      <form id="change-password" class="passwordChange">
         <input type="password" name="passwords[old]" placeholder="Old Password">
         <input type="password" name="passwords[new]" placeholder="New Password">
-        <input type="submit" value="Changed Password!">
+        <input class="sub" type="submit" value="Changed Password!">
       </form>
       <br>
-      <form id="sign-out">
-        <input type="submit" value="Sign Out!">
+      <form id="sign-out" class="signingOut">
+        <input class="sub" type="submit" value="Sign Out!">
       </form>
 
       <h2>Game Board</h2>
-      <div class="container gameboard">
+      <div id="gameBoardID" class="container gameboard">
         <div class="row tic-row1">
         <div class="col-4 square tic-zero" data-id="0"></div>
         <div class="col-4 square tic-one" data-id="1"></div>
@@ -55,8 +55,8 @@
       </div>
       </div>
       <br>
-      <button class="newGame">New Game</button>
-      <button class="gameStats">Game Stats</button>
+      <button id="newG" class="newGame sub">New Game</button>
+      <button id="gS" class="gameStats sub">Game Stats</button>
       <div class="mess" id="message"></div>
       <div class="mess" id="winOrTie"></div>
     </body>

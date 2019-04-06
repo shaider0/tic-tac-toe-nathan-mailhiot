@@ -2,7 +2,7 @@
 // const store = require('./store.js')
 const api = require('./api.js')
 // current player
-let currentPlayer = 'x'
+let currentPlayer = 'o'
 
 //  empty game board
 let ticBoard = ['', '', '', '', '', '', '', '', '']
@@ -18,7 +18,7 @@ const gameFinished = function () {
   }
 }
 
-// let clickedBox =
+// $('#gameBoardID').removeClass('gameboard')
 
 // new game button
 const onNewGame = function (event) {
@@ -36,10 +36,7 @@ const onNewGame = function (event) {
 const turn = () => {
   if (currentPlayer === 'x') {
     currentPlayer = 'o'
-    // call apiGameUpdate here
-    // api.upDateGame($('.square').data('id'), 'o', gameOver)
   } else {
-    // call apiGameUpdate here
     currentPlayer = 'x'
   }
   $('#message').text(`${currentPlayer}, it is your turn`)
@@ -80,8 +77,9 @@ const onClickbox = function (event) {
     // this checks to see if there is a winner
     gameState(ticBoard, currentPlayer)
     console.log(ticBoard)
-    // this checks to see if the game is over
+    // sends the patch to the api
     api.upDateGame(currentSquare, currentPlayer, gameOver)
+    // this checks to see if the game is over
     gameFinished()
     // this changes the player
     turn()
@@ -103,7 +101,6 @@ const onClickbox = function (event) {
 // passing my functions to my app file
 const addEventHandler = function () {
   $('.square').on('click', onClickbox)
-  $('.square').on('')
   $('.newGame').on('click', onNewGame)
 }
 

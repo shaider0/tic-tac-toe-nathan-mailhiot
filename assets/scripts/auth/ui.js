@@ -3,6 +3,8 @@ const store = require('./../store.js')
 const signUpSuccess = function (data) {
   $('.up').text('You successfully signed up!')
   $('#sign-up').hide(1000)
+  $('.up').hide(6000)
+  $('#sign-in').removeClass('signingIn')
   console.log('sign up success ran with the data: ', data)
   $('form').trigger('reset')
 }
@@ -15,6 +17,11 @@ const signUpFailure = function (data) {
 const signInSuccess = function (data) {
   $('.login').text('You logged in successfully!')
   $('#sign-in').hide(1000)
+  $('.login').hide(6000)
+  $('#sign-out').removeClass('signingOut')
+  $('#change-password').removeClass('passwordChange')
+  $('#newG').removeClass('newGame')
+  $('#gS').removeClass('gameStats')
   console.log('sign in success ran with the data: ', data)
   store.user = data.user
   $('form').trigger('reset')
@@ -27,6 +34,7 @@ const signInFailure = function (data) {
 
 const changePasswordSuccess = function (data) {
   $('.change').text('You changed your password successfully')
+  $('.change').hide(6000)
   console.log('password change success ran with the data: ', data)
   $('form').trigger('reset')
 }
@@ -39,6 +47,8 @@ const changePasswordFailure = function (data) {
 const signOutSuccess = function () {
   console.log('Sign out successful')
   $('.out').text('You signed out successfully!')
+  $('.out').hide(6000)
+  $('#sign-in').show()
   $('form').trigger('reset')
   store.user = null
 }

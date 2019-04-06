@@ -8,8 +8,37 @@ h2{
   text-align: center;
 }
 
+body {
+  background-color: skyblue;
+}
+
+.sub {
+  background-color: red;
+  border-radius: 60%;
+}
+
+.signingIn {
+  display: none;
+}
+
+.signingOut {
+  display: none;
+}
+
+.passwordChange {
+  display: none;
+}
+
+.newGame {
+  display: none;
+}
+
+.gameStats {
+  display: none;
+}
+
 .square {
-border: solid black 1px;
+border: solid white 5px;
 font-size: 5vw;
 background: #6AB187;
 text-align: center;
@@ -17,6 +46,10 @@ color: black;
 height: 100px;
 width: 100px;
 }
+
+/*.gameboard {
+  display: none;
+} */
 
 .mess {
   text-align: center;
