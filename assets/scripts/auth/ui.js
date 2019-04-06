@@ -19,6 +19,7 @@ const signInSuccess = function (data) {
   $('#sign-out').removeClass('signingOut')
   $('#change-password').removeClass('passwordChange')
   $('#change-password').show()
+  $('.hideboard').show()
   $('#newG').removeClass('newGame')
   $('#gS').removeClass('gameStats')
   store.user = data.user
@@ -46,6 +47,8 @@ const signOutSuccess = function () {
   $('#sign-in').show()
   $('#sign-up').show()
   $('form').trigger('reset')
+  $('#sign-out').hide()
+  $('.hideboard').hide()
   store.user = null
 }
 

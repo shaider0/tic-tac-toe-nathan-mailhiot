@@ -13,10 +13,9 @@
     </head>
     <body>
       <h1>TIC TAC TOE</h1>
-      <div class="up"></div>
-      <div class="login"></div>
-      <div class="change"></div>
-      <div class="out"></div>
+      <div id="signInandUp">
+        <div class="up"></div>
+        <div class="login"></div>
       <form id="sign-up" class="signingUp">
         <input type="email" name="credentials[email]" placeholder="Email">
         <input type="password" name="credentials[password]" placeholder="Password">
@@ -29,7 +28,11 @@
         <input type="password" name="credentials[password]" placeholder="Password">
         <input class="sub" type="submit" value="Sign In!">
       </form>
+    </div>
       <br>
+      <div id="signOutandChange">
+        <div class="change"></div>
+        <div class="out"></div>
       <form id="change-password" class="passwordChange">
         <input type="password" name="passwords[old]" placeholder="Old Password">
         <input type="password" name="passwords[new]" placeholder="New Password">
@@ -39,7 +42,9 @@
       <form id="sign-out" class="signingOut">
         <input class="sub" type="submit" value="Sign Out!">
       </form>
+    </div>
 
+    <div class="hideboard">
       <h2>Game Board</h2>
       <div id="gameBoardID" class="container gameboard gameboard1">
         <div class="row tic-row1">
@@ -60,5 +65,6 @@
       <div id="numberOfGames"></div>
       <div class="mess" id="message"></div>
       <div class="mess" id="winOrTie"></div>
+    </div>
     </body>
 </html>
