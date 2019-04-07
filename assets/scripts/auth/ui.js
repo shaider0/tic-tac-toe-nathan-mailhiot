@@ -34,6 +34,8 @@ const signInSuccess = function (data) {
   $('.hideboard').show()
   // storing user data to the store
   store.user = data.user
+  // shows sign-out button
+  $('#sign-out').show()
   // resetting the form
   $('form').trigger('reset')
 }
@@ -71,7 +73,7 @@ const signOutSuccess = function () {
 }
 
 const signOutFailure = function () {
-  console.log('Sign out failed')
+  $('.out').text('Sign out failed, try again.')
 }
 
 module.exports = {

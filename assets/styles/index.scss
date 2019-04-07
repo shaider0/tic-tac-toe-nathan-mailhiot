@@ -10,7 +10,7 @@ h1{
 
 body {
   background-color: rgb(207, 241, 255);
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Shadows Into Light', cursive, serif;
 }
 
 #signInandUp, #signOutandChange {
@@ -83,7 +83,7 @@ background-color: rgba(232, 190, 255, .8);
   width: 100%;
   font-size: 36px;
   font-weight: bold;
-  color: purple;
+  color: black;
 }
 
 .up, .login, .change, .out, #numberOfGames{
