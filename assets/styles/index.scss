@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 
 h1{
   text-align: center;
@@ -90,4 +91,8 @@ background-color: rgba(232, 190, 255, .8);
 text-align: center;
 width: 100%;
 font-size: 24px;
+}
+
+.gameboard {
+  font-family: 'Abril Fatface', cursive, serif;
 }
