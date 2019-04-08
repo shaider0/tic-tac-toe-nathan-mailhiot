@@ -72,6 +72,8 @@ const signOutSuccess = function () {
   $('#sign-out').hide()
   // hides the board
   $('.hideboard').hide()
+  // hides the number of games played on sign out
+  $('#numberOfGames').hide()
   store.user = null
 }
 

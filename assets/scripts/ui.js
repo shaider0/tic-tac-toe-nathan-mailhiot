@@ -20,7 +20,6 @@ const getSuccess = function (response) {
   const gamesPlayed = response.games.length
   // prints the message to the player
   $('#numberOfGames').text(`The number of games you have played is ${gamesPlayed}`)
-  $('#numberOfGames').hide(5000)
   $('#numberOfGames').show()
 }
 
