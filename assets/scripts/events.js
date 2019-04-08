@@ -31,6 +31,8 @@ const onNewGame = function (event) {
   $('.gameboard1').removeClass('gameboard1')
   // shows the board after being clicked
   $('.gameboard').show(1000)
+  // current player = o
+  currentPlayer = 'o'
   // resets whose turn it is so it starts with x
   turn()
   // shows the message box
