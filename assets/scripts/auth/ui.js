@@ -49,8 +49,8 @@ const signInFailure = function (data) {
 
 const changePasswordSuccess = function (data) {
   $('.change').text('You changed your password successfully')
-  $('.change').hide(3000)
   $('form').trigger('reset')
+  $('.change').hide(3000)
 }
 
 const changePasswordFailure = function (data) {

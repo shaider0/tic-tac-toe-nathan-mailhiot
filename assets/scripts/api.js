@@ -12,7 +12,7 @@ const createGame = function (data) {
 
 const upDateGame = function (index, value, over) {
   return $.ajax({
-    url: config.apiUrl + `games/${store.game.id}`,
+    url: config.apiUrl + `/games/${store.game.id}`,
     method: 'PATCH',
     headers: {Authorization: 'Token token=' + store.user.token},
     data: {
