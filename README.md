@@ -10,4 +10,7 @@ I would like to refactor my code in the future so it's not as messy. I'd also li
 
 My wireframe https://imgur.com/a/SQtIshx
 
-User Stories As a user I’d like to be able to sign in. As a user I’d like to be able to play tic tac toe. As a user I’d like to see how many games I’ve played. As a user I’d like to be able to sign out.
+User Stories As a user I’d like to be able to sign in.
+As a user I’d like to be able to play tic tac toe.
+As a user I’d like to see how many games I’ve played.
+As a user I’d like to be able to sign out.
