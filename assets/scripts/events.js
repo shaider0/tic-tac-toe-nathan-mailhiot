@@ -13,7 +13,7 @@ let gameOver = false
 const gameFinished = function () {
   if (gameOver === true) {
     $('.gameboard').hide()
-    $('#message').hide(2000)
+    $('.mess').hide(2000)
   }
 }
 
@@ -36,7 +36,7 @@ const onNewGame = function (event) {
   // resets whose turn it is so it starts with x
   turn()
   // shows the message box
-  $('#message').show()
+  $('.mess').show()
 }
 
 // turn

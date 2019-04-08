@@ -1,4 +1,5 @@
 const store = require('./../store.js')
+const event = require('./../events.js')
 
 const signUpSuccess = function (data) {
   // sign up message successful
@@ -38,6 +39,8 @@ const signInSuccess = function (data) {
   $('#sign-out').show()
   // resetting the form
   $('form').trigger('reset')
+  // starts a new game
+  event.onNewGame()
 }
 
 const signInFailure = function (data) {
