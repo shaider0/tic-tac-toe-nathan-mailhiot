@@ -1,7 +1,8 @@
 const store = require('./../store.js')
-const event = require('./../events.js')
+// const eventr = require('./../events.js')
 
 const signUpSuccess = function (data) {
+  $('.up').show()
   // sign up message successful
   $('.up').text('You successfully signed up!')
   // sign up message hidden
@@ -12,9 +13,12 @@ const signUpSuccess = function (data) {
 
 const signUpFailure = function (data) {
   $('.up').text('Something went wrong. Try again!')
+  $('form').trigger('reset')
 }
 
 const signInSuccess = function (data) {
+  // show log in message
+  $('.login').show()
   // login successful message
   $('.login').text('You logged in successfully!')
   // login message hidden
@@ -40,24 +44,29 @@ const signInSuccess = function (data) {
   // resetting the form
   $('form').trigger('reset')
   // starts a new game
-  event.onNewGame()
+  // eventr.onNewGame()
 }
 
 const signInFailure = function (data) {
+  $('.login').show()
   $('.login').text('Something went wrong try again.')
 }
 
 const changePasswordSuccess = function (data) {
+  $('.change').show()
   $('.change').text('You changed your password successfully')
   $('form').trigger('reset')
-  $('.change').hide(3000)
 }
 
 const changePasswordFailure = function (data) {
+  $('.change').show()
   $('.change').text('Something went wrong try again.')
+  $('form').trigger('reset')
 }
 
 const signOutSuccess = function () {
+  // show sign out message
+  $('.out').show()
   // sign out message
   $('.out').text('You signed out successfully!')
   // hides sign out message
@@ -74,6 +83,8 @@ const signOutSuccess = function () {
   $('.hideboard').hide()
   // hides the number of games played on sign out
   $('#numberOfGames').hide()
+  // hides password change
+  $('.change').hide()
   store.user = null
 }
 

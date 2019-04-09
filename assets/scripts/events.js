@@ -13,7 +13,7 @@ let gameOver = false
 const gameFinished = function () {
   if (gameOver === true) {
     $('.gameboard').hide()
-    $('.mess').hide(2000)
+    $('.mess').hide(5000)
   }
 }
 
