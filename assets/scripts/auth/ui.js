@@ -50,6 +50,7 @@ const signInSuccess = function (data) {
 const signInFailure = function (data) {
   $('.login').show()
   $('.login').text('Something went wrong try again.')
+  $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function (data) {
@@ -90,6 +91,7 @@ const signOutSuccess = function () {
 
 const signOutFailure = function () {
   $('.out').text('Sign out failed, try again.')
+  $('form').trigger('reset')
 }
 
 module.exports = {
